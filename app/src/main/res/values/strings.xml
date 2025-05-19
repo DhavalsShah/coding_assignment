@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyBookApplication</string>
+    <string name="btn_get_text">GET</string>
+</resources>
