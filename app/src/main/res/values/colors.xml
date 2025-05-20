@@ -4,4 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey_color">#F2F1F7</color>
     <color name="grey_color_variant">#F0F0F0</color>
+    <color name="sample_button_color">#4E3B3E</color>
+    <color name="colorPrimaryDark">#1C0002</color>
+    <color name="pages_text_color">#AA959A</color>
+    <color name="author_text_color">#F8F3F0</color>
+    <color name="gradient_start_color">#230000</color>
 </resources>

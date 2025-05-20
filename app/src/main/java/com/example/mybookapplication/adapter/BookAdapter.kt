@@ -11,11 +11,12 @@ import com.example.mybookapplication.R
 import com.example.mybookapplication.data.BookData
 
 
-class BookAdapter (val bookList : ArrayList<BookData>) : RecyclerView.Adapter<BookAdapter.BookItemViewHolder>() {
-
+class BookAdapter(val bookList: ArrayList<BookData>, val onBookClick: (Int) -> Unit) :
+    RecyclerView.Adapter<BookAdapter.BookItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.list_item_book, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.list_item_book, parent, false)
         return BookItemViewHolder(view)
     }
 
@@ -24,23 +25,28 @@ class BookAdapter (val bookList : ArrayList<BookData>) : RecyclerView.Adapter<Bo
     }
 
     override fun onBindViewHolder(holder: BookItemViewHolder, position: Int) {
-        holder.tvBookName.text = "${(position+1)}. ${bookList[position].bookName}"
+        holder.tvBookName.text = "${(position + 1)}. ${bookList[position].bookName}"
         holder.tvAuthorName.text = bookList[position].bookAuthor
         Glide.with(holder.itemView.context).load(bookList[position].bookImage).into(holder.ivBook)
-    }
-
-    // ViewHolder class
-    class BookItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvAuthorName: TextView
-        val tvBookName: TextView
-        val ivBook: ImageView
-
-        init {
-            tvAuthorName = itemView.findViewById(R.id.tv_author_name);
-            tvBookName = itemView.findViewById(R.id.tv_book_name);
-            ivBook = itemView.findViewById(R.id.iv_book);
+        holder.itemView.setOnClickListener {
+            onBookClick.invoke(holder.adapterPosition)
         }
     }
+
+
+// ViewHolder class
+class BookItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    val tvAuthorName: TextView
+    val tvBookName: TextView
+    val ivBook: ImageView
+
+    init {
+        tvAuthorName = itemView.findViewById(R.id.tv_author_name);
+        tvBookName = itemView.findViewById(R.id.tv_book_name);
+        ivBook = itemView.findViewById(R.id.iv_book);
+    }
+
+}
 
 
 }

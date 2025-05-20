@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MyBookApplication</string>
-    <string name="btn_get_text">GET</string>
+    <string name="btn_get_text">Get</string>
     <string name="free_text">FREE</string>
-    <string name="something_went_wrong">Something went wrong!</string>
+    <string name="something_went_wrong">Something went wrong!\n Tap here to retry</string>
+    <string name="sample_text">Sample</string>
 </resources>

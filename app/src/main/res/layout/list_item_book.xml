@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/rl_book_item_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingHorizontal="@dimen/margin_16dp"
@@ -24,7 +25,6 @@
         android:layout_centerVertical="true"
         android:layout_gravity="center_vertical"
         android:layout_marginHorizontal="@dimen/margin_10dp"
-        android:layout_toStartOf="@id/btn_get"
         android:layout_toEndOf="@id/iv_book"
         android:orientation="vertical">
 
@@ -42,17 +42,5 @@
             tool:text="author_name" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_get"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:layout_gravity="center_vertical"
-        android:backgroundTint="@color/grey_color"
-        android:text="@string/btn_get_text"
-        android:textStyle="bold"
-        android:textColor="@color/black" />
 
 </RelativeLayout>
